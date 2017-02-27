@@ -5,6 +5,7 @@ require '../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+echo 'TEST';
 // create a log channel
 $log = new Logger('name');
 $log->pushHandler(new StreamHandler('log.log', Logger::WARNING));
