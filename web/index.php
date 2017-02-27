@@ -12,7 +12,7 @@ $log->pushHandler(new StreamHandler('log.log', Logger::WARNING));
 // add records to the log
 // $log->info(var_export('index', true));
 // $log->info(var_export($_POST, true));
-$log->warning('Foo');
+$log->warning('SnneFoo');
 $log->error('Bar');
 
 header('Content-type:application/json;charset=utf-8');
