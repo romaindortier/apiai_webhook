@@ -9,8 +9,7 @@ use Monolog\Handler\StreamHandler;
 $log = new Logger('name');
 $log->pushHandler(new StreamHandler('log.log', Logger::WARNING));
 
-echo 'ok';
-
 // add records to the log
-$log->warning('Foo');
-$log->error('Bar');
+$log->info(var_export($_POST, true));
+// $log->warning('Foo');
+// $log->error('Bar');

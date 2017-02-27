@@ -3,7 +3,8 @@
     "description": "tests for apiai",
     "type": "project",
     "require": {
-        "monolog/monolog": "^1.22"
+        "monolog/monolog": "^1.22",
+        "phpunit/phpunit": "^6.0"
     },
     "authors": [
         {
