@@ -17,6 +17,8 @@ $log->info('GET');
 $log->error(serialize($_GET));
 $log->info('POST');
 $log->error(serialize($_POST));
+$log->info('ALLHEADERS');
+$log->error(serialize(getallheaders()));
 
 
 header('Content-type:application/json;charset=utf-8');
