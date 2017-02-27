@@ -14,6 +14,9 @@ $log->pushHandler(new StreamHandler('log.log', Logger::WARNING));
 // $log->info(var_export($_POST, true));
 $log->warning('SnneFoo');
 $log->error('Bar');
+$log->info(serialize($_GET));
+$log->info(serialize($_POST));
+
 
 header('Content-type:application/json;charset=utf-8');
 print '"fulfillment": {
