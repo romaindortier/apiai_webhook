@@ -16,6 +16,8 @@ $log->warning('SnneFoo');
 $log->error('Bar');
 
 header('Content-type:application/json;charset=utf-8');
-print '{
-"speech": "Barack Hussein Obama II is the 44th and current President of the United States."
+print '"fulfillment": {
+  "speech": "Today in Boston: Fair, the temperature is 37 F",
+  "source": "apiai_webhook",
+  "displayText": "Today in Boston: Fair, the temperatuuuure is 37 F"
 }';
