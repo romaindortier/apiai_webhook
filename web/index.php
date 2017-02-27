@@ -22,8 +22,9 @@ $log->error(serialize($_POST));
 header('Content-type:application/json;charset=utf-8');
 
 $data['fulfillment'] = 
-	['speech'=> 'Today in Boston: Fair, the temperature is 37 F',
+	[
+	'speech'=> 'Today '.$_GET['getparam'],
 	'source'=> 'apiai_webhook',
-	'displayText'=> 'Today in Boston: Fair, the temperature is 37 F'
+	'displayText'=> 'Today '.$_GET['getparam']
 	];
 print  json_encode($data);
