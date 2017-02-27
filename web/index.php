@@ -26,8 +26,5 @@ $data =
 	'speech'=> 'Today '.$_GET['getparam'],
 	'source'=> 'apiai_webhook',
 	'displayText'=> 'Today '.$_GET['getparam']
-	'data'=> 'Today '.$_GET['getparam'],
-	'contextOut'=> 'Today '.$_GET['getparam'],
-	'source'=> 'DuckDuckGo',
 	];
 print  json_encode($data);
