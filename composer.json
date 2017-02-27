@@ -1,0 +1,15 @@
+{
+    "name": "romodo/apiai_webhook",
+    "description": "tests for apiai",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^1.22"
+    },
+    "authors": [
+        {
+            "name": "romain",
+            "email": "romain.dortier@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
