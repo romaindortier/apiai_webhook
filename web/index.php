@@ -24,8 +24,8 @@ header('Content-type:application/json;charset=utf-8');
 
 $data = 
 	[
-	'speech'=> 'Today '.$_GET['getparam'].' '.$_GET['id'],
+	'speech'=> 'Today '.$_GET['getparam'].' '.$_POST['id'],
 	'source'=> 'apiai_webhook',
-	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$_GET['id']
+	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$_POST['id']
 	];
 print  json_encode($data);
