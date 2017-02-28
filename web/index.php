@@ -34,7 +34,7 @@ $log->info(serialize($_SERVER));
 $log->info('GETPOSTJSON');
 // print_r('uu');
 $data = file_get_contents('php://input');
-print_r($data);
+// print_r($data);
 $log->info($data);
 $parsed_data = json_decode($data, true);
 
