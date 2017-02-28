@@ -20,13 +20,14 @@ $parameters = $request["result"]["parameters"];
 // $log->info(var_export('index', true));
 // $log->info(var_export($_POST, true));
 // $log->warning($_GET['getparam']);
-/*
+
 $log->info('GET');
 $log->info(serialize($_GET));
 $log->info('POST');
 $log->info(serialize($_POST));
 $log->info('REQUEST');
 $log->info(serialize($_REQUEST));
+/*
 $log->info('SERVER');
 $log->info(serialize($_SERVER));
 */
