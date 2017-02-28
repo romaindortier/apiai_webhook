@@ -41,7 +41,7 @@ $parsed_data = json_decode($data, true);
 
 $data = 
 	[
-	'speech'=> 'Test zzzz '.$_GET['getparam'].' '.$data,
+	'speech'=> 'Test zzzz '.$_GET['getparam'].' '.$parsed_data['id'].' '.$data,
 	'source'=> 'apiai_webhook',
 	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$parsed_data['id']
 	];
