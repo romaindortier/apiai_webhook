@@ -14,13 +14,16 @@ $log->pushHandler(new StreamHandler('log.log', Logger::INFO));
 // $log->info(var_export($_POST, true));
 // $log->warning($_GET['getparam']);
 $log->info('GET');
-$log->error(serialize($_GET));
+$log->info(serialize($_GET));
 $log->info('POST');
-$log->error(serialize($_POST));
+$log->info(serialize($_POST));
 $log->info('REQUEST');
-$log->error(serialize($_REQUEST));
+$log->info(serialize($_REQUEST));
 $log->info('SERVER');
-$log->error(serialize($_SERVER));
+$log->info(serialize($_SERVER));
+$log->info('GETPOSTJSON');
+$data = json_decode(file_get_contents('php://input'), true);
+$log->info($data);
 
 header('Content-type:application/json;charset=utf-8');
 
