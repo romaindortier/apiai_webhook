@@ -22,15 +22,16 @@ $log->info(serialize($_REQUEST));
 $log->info('SERVER');
 $log->info(serialize($_SERVER));
 $log->info('GETPOSTJSON');
-$data = json_decode(file_get_contents('php://input'), true);
+$data = file_get_contents('php://input');
 $log->info($data);
+$parsed_data = json_decode($data, true);
 
 header('Content-type:application/json;charset=utf-8');
 
 $data = 
 	[
-	'speech'=> 'Test zzzz '.$_GET['getparam'].' '.$data['id'],
+	'speech'=> 'Test zzzz '.$_GET['getparam'].' '.$parsed_data['id'],
 	'source'=> 'apiai_webhook',
-	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$data['id']
+	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$parsed_data['id']
 	];
 print  json_encode($data);
