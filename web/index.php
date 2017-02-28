@@ -9,6 +9,7 @@ use Monolog\Handler\StreamHandler;
 $log = new Logger('name');
 $log->pushHandler(new StreamHandler('log.log', Logger::INFO));
 
+header('Content-type:application/json;charset=utf-8');
 // add records to the log
 // $log->info(var_export('index', true));
 // $log->info(var_export($_POST, true));
@@ -22,12 +23,12 @@ $log->info(serialize($_REQUEST));
 $log->info('SERVER');
 $log->info(serialize($_SERVER));
 $log->info('GETPOSTJSON');
+// print_r('uu');
 $data = file_get_contents('php://input');
-print_r($data);
+// print_r($data);
 $log->info($data);
 $parsed_data = json_decode($data, true);
 
-header('Content-type:application/json;charset=utf-8');
 
 $data = 
 	[
