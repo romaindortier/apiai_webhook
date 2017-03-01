@@ -14,19 +14,18 @@ header('Content-type:application/json;charset=utf-8');
 
 $json = file_get_contents('php://input'); 
 $request = json_decode($json, true);
-$action = $request["result"]["action"];
-$parameters = $request["result"]["parameters"];
 // add records to the log
 // $log->info(var_export('index', true));
 // $log->info(var_export($_POST, true));
 // $log->warning($_GET['getparam']);
 
-$log->info('GET');
-$log->info(serialize($_GET));
-$log->info('POST');
-$log->info(serialize($_POST));
-$log->info('REQUEST');
-$log->info(serialize($_REQUEST));
+
+$params['query'] = $request["result"]["resolvedQuery"];
+$params['intent'] = $request["intentName"];
+$params['action'] = $request["result"]["action"];
+$params['contexts'] = $request["result"]["contexts"];
+$params['parameters'] = $request["result"]["parameters"];
+
 /*
 $log->info('SERVER');
 $log->info(serialize($_SERVER));
@@ -35,15 +34,9 @@ $log->info('GETPOSTJSON');
 // print_r('uu');
 $data = file_get_contents('php://input');
 // print_r($data);
-$log->info($data);
+$log->info(serialize($params));
 $parsed_data = json_decode($data, true);
 
-
-$params['query'] = $request["result"]["resolvedQuery"];
-$params['intent'] = $request["intentName"];
-$params['action'] = $request["result"]["action"];
-$params['contexts'] = $request["result"]["contexts"];
-$params['parameters'] = $request["result"]["parameters"];
 
 
 $data = 
