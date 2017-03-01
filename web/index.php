@@ -39,9 +39,16 @@ $log->info($data);
 $parsed_data = json_decode($data, true);
 
 
+$params['query'] = $request["result"]["resolvedQuery"];
+$params['intent'] = $request["intentName"];
+$params['action'] = $request["result"]["action"];
+$params['contexts'] = $request["result"]["contexts"];
+$params['parameters'] = $request["result"]["parameters"];
+
+
 $data = 
 	[
-	'speech'=> 'Test BUM '.$_GET['getparam'].' '.$parsed_data['id'].' '.$data,
+	'speech'=> 'Test BUM '.$_GET['getparam'].' '.$params['query'].' '.$params['intent'].' '.$params['action'].' '.$params['contexts'].' '.serialize($params['parameters']),
 	'source'=> 'apiai_webhook',
 	'displayText'=> 'Todayo '.$_GET['getparam'].' '.$parsed_data['id']
 	];
